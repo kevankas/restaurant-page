@@ -1,23 +1,35 @@
 import _ from 'lodash';
 
- function component() {
-   const element = document.createElement('div');
-
-  
-   element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-   return element;
- }
-
-
-
  function makeElements()
  {
   const fillPage = document.getElementById("content");
-  
-  fillPage.innerHTML = ("testt");
+
+
+ 
+  for (let i = 1; i <= 3; i++) {
+    const newDiv = document.createElement("div");
+
+    if (i == 1)
+      {
+        newDiv.textContent = "Home";
+      }
+    if (i == 2)
+      {
+        newDiv.textContent = "Menu";
+      }
+    else
+      {
+        newDiv.textContent = "Contact";
+      }
+    newDiv.classList.add("hdr");
+    fillPage.appendChild(newDiv);
+  }
+
+
+
  }
  
-
- document.body.appendChild(component());
  document.body.appendChild(makeElements());
+
+
+ 

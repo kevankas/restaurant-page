@@ -1,0 +1,20 @@
+#content
+{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.hdr
+{
+    font-size: 24px;
+}
+body, html
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+:root
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
