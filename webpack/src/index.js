@@ -36,18 +36,23 @@ import _ from 'lodash';
         newDiv.textContent = "Home";
         newDiv.addEventListener("click", () => {
           clearSelected();
+         
+          
           newDiv.classList.add("selected");
+          sectionOne.style.display = "block";
           
           // alert("You clicked on Home!");
           fillPage.appendChild(bodyText);
           bodyText.classList.add("body");
           // bodyText.appendChild(img);
+          
           bodyText.appendChild(sectionOne);
           sectionOne.classList.add("sectionOne");
           bodyText.appendChild(sectionTwo);
           sectionTwo.classList.add("sectionTwo");
           bodyText.appendChild(sectionThree);
           sectionThree.classList.add("sectionThree");
+
           sectionOne.appendChild(img);
           sectionTwo.textContent = "The Black Forge Inn Home Page!";
           sectionThree.textContent = "Come Eat At The Black Forge Inn Today!"
@@ -57,23 +62,33 @@ import _ from 'lodash';
     if (i == 2)
       {
         newDiv.textContent = "Menu";
+        const sectionFour = document.createElement("div");
         newDiv.addEventListener("click", () => {
           clearSelected();
-          newDiv.classList.remove("selected");
+         
+          sectionOne.style.display = "none";
           newDiv.classList.add("selected");
           // alert("You clicked on Menu!");
           fillPage.appendChild(bodyText);
           bodyText.classList.add("body");
           // bodyText.appendChild(img);
+
           bodyText.appendChild(sectionOne);
           sectionOne.classList.add("sectionOne");
           bodyText.appendChild(sectionTwo);
           sectionTwo.classList.add("sectionTwo");
+          
           bodyText.appendChild(sectionThree);
           sectionThree.classList.add("sectionThree");
-          sectionOne.appendChild(img);
+
+          // sectionOne.appendChild(img);
           sectionTwo.textContent = "The Black Forge Inn Menu Page";
-          sectionThree.textContent = "Come Eat At The Black Forge Inn Today!"
+            sectionThree.classList.add("sectionThree");
+    sectionThree.innerHTML = `
+      <div class="menu-item">Appetizer: Eggs</div>
+      <div class="menu-item">Entree: Ribeye Steak</div>
+      <div class="menu-item">Dessert: Pecan Pie</div>
+    `;
         });
       }
     if (i == 3)
@@ -81,29 +96,33 @@ import _ from 'lodash';
         newDiv.textContent = "Contact";
         newDiv.addEventListener("click", () => {
           clearSelected();
+          sectionOne.style.display = "none";
           newDiv.classList.add("selected");
           // alert("You clicked on Contact!");
           fillPage.appendChild(bodyText);
           bodyText.classList.add("body");
           // bodyText.appendChild(img);
+
           bodyText.appendChild(sectionOne);
           sectionOne.classList.add("sectionOne");
           bodyText.appendChild(sectionTwo);
           sectionTwo.classList.add("sectionTwo");
           bodyText.appendChild(sectionThree);
           sectionThree.classList.add("sectionThree");
-          sectionOne.appendChild(img);
-          sectionTwo.textContent = "The Black Forge Inn Contact Page";
-          sectionThree.textContent = "Come Eat At The Black Forge Inn Today!"
+
+          // sectionOne.appendChild(img);
+          sectionTwo.textContent = "By Phone: 281-223-3322";
+          sectionThree.textContent = "Our Address: 3233 Fake St Houston Texas 77063"
         });
       }
     newDiv.classList.add("hdr");
     container.appendChild(newDiv);
+    
   }
+  addCreditsFooter();
 
  }
- 
- document.body.appendChild(makeElements());
+
 
 
  function clearSelected() {
@@ -111,4 +130,19 @@ import _ from 'lodash';
   buttons.forEach(button => {
     button.classList.remove("selected");
   });
+}
+
+ 
+document.body.appendChild(makeElements());
+
+function addCreditsFooter() {
+  const creditsFooter = document.createElement("footer");
+  creditsFooter.classList.add("credits");
+  
+  const creditsLink = document.createElement("a");
+  creditsLink.href = "https://github.com/kevankas";
+  creditsLink.textContent = "Made By Kevan";
+
+  document.body.appendChild(creditsLink);
+  document.body.appendChild(creditsFooter);
 }

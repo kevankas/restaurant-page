@@ -51,3 +51,20 @@ img
     color: white;
     font-size: 36px;
   }
+
+  .sectionOne, .sectionTwo, .sectionThree
+  {
+    text-align: center;
+  }
+  
+a {
+    text-decoration: none; /* Reset all styling properties to their initial values */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f5f5f5; /* Set your preferred background color */
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+  }
